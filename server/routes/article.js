@@ -10,4 +10,8 @@ router.get('/edit-article', function(req, res, next) {
   res.render('edit-article'); 
 });
 
+router.post('/add-article', function(req, res, next) {
+  console.log(req.body);
+});
+
 module.exports = router;
