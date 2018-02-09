@@ -12,7 +12,6 @@ router.get('/edit-category', function(req, res, next) {
 });
 
 router.post('/add-category', function(req, res, next) {
-  console.log(req.body)
-});
+ });
 
 module.exports = router;
