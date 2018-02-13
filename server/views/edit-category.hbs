@@ -1,1 +1,11 @@
 edit category
+<ul>
+{{#each categories}}
+    <li>{{this.title}}</li>
+    <li>{{this.shortDescription}}</li>
+    <li>{{this.order}}</li>
+    <li>{{this.icon}}</li>
+    <li>{{this.description}}</li>
+
+{{/each}}
+</ul>

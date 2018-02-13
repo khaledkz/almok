@@ -1,1 +1,7 @@
-edit article
+<ul>
+{{#each articles}}
+    <li>{{this.title}}</li>    
+    <li>{{this.order}}</li>    
+    <li>{{this._id}}</li>    
+ {{/each}}
+</ul>
