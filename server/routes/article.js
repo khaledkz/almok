@@ -46,8 +46,25 @@ router.get('/edit-article/:articleId/delete', function (req, res, next) {
 })
 
 router.get('/edit-article/:articleId/update', function (req, res, next) {
+
   const { articleId } = req.params;
-  res.redirect('/')
+ 
+  const cb = (singleArticle) => {
+
+    res.render('edit-single-article', {
+      singleArticle
+    });
+  }
+
+  dbClinetArt.findSingleArticle(articleId, cb)
+})
+
+router.post('/edit-article/:articleId/update', function (req, res, next) {
+  const { articleId } = req.params;
+  const cb=()=>{
+    res.redirect(`/article/edit-article/${articleId}`)
+  }
+  dbClinetArt.updateArticle(articleId,req.body,cb);
 })
 
 module.exports = router;

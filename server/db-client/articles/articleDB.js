@@ -19,4 +19,8 @@ const removeArticle=(singleArticle,cb)=>{
   Article.remove({"_id":ObjectId(singleArticle)}).then(cb);
 }
 
-module.exports = { saveArtice,findArticle,findSingleArticle,removeArticle };
+const updateArticle = (singleArticle,query,cb)=>{
+  Article.updateOne({"_id":ObjectId(singleArticle)},query,{upsert:true}).then(cb);
+}
+
+module.exports = { saveArtice,findArticle,findSingleArticle,removeArticle,updateArticle };
