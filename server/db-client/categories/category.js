@@ -1,12 +1,17 @@
 require("../connection")
-const category = require("../../models/category")
+const Category = require("../../models/category")
 
 const saveCategory = (query,cb)=>{
-    category.create(query).then(cb)
+    Category.create(query).then(cb)
 }
 
 const findCategory=(query,cb)=>{
-    category.find(query).then(cb);
+    Category.find(query).then(cb);
 }
 
-module.exports={saveCategory,findCategory};
+const findSingleCategory=(singleCategory,cb)=>{
+ 
+    Category.findById(singleCategory).then(cb);
+}
+
+module.exports={saveCategory,findCategory,findSingleCategory};
