@@ -17,7 +17,7 @@ router.get('/edit-category', function (req, res, next) {
 
 router.post('/add-category', function (req, res, next) {
   let cb = () => {
-    res.redirect('/')
+    res.redirect('/');
   }
   dbClinetCate.saveCategory(req.body, cb);
 });
@@ -38,8 +38,12 @@ router.get('/edit-category/:singleCat',(req, res, next)=>{
 router.get('/edit-category/:singleCat/delete',(req, res, next)=>{
 
   const {singleCat} = req.params;
-  res.redirect('/');
-  
+
+  const cb=()=>{
+       res.redirect('/category/edit-category')
+  }
+
+  dbClinetCate.removeCategory(singleCat,cb)
 })
 
 router.get('/edit-category/:singleCat/update',(req, res, next)=>{

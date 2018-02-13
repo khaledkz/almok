@@ -1,4 +1,6 @@
-require('../connection')
+require('../connection');
+
+const ObjectId = require('mongodb').ObjectID;
 const Article = require('../../models/Article');
 
 const saveArtice = (query, cb) => {
@@ -13,4 +15,8 @@ const findSingleArticle=(singleArticle,cb)=>{
   Article.findById(singleArticle).then(cb);
 }
 
-module.exports = { saveArtice,findArticle,findSingleArticle };
+const removeArticle=(singleArticle,cb)=>{
+  Article.remove({"_id":ObjectId(singleArticle)}).then(cb);
+}
+
+module.exports = { saveArtice,findArticle,findSingleArticle,removeArticle };
