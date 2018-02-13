@@ -19,4 +19,8 @@ const removeCategory=(category,cb)=>{
     Category.remove({"_id":ObjectId(category)}).then(cb);
 }
 
-module.exports={saveCategory,findCategory,findSingleCategory,removeCategory};
+const updateCategory=(category,query,cb)=>{
+    Category.updateOne({"_id":ObjectId(category)},query,{upsert:true}).then(cb)
+}
+
+module.exports={saveCategory,findCategory,findSingleCategory,removeCategory,updateCategory};
