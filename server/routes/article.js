@@ -36,4 +36,14 @@ router.get('/edit-article/:articleId', function(req, res, next) {
     dbClinetArt.findSingleArticle(articleId,cb)
  })
 
+ router.get('/edit-article/:articleId/delete', function(req, res, next) {
+  const {articleId}=req.params;
+  res.redirect('/')
+})
+
+router.get('/edit-article/:articleId/update', function(req, res, next) {
+  const {articleId}=req.params;
+  res.redirect('/')
+})
+
 module.exports = router;

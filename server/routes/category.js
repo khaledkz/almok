@@ -35,4 +35,18 @@ router.get('/edit-category/:singleCat',(req, res, next)=>{
   dbClinetCate.findSingleCategory(singleCat,cb)
 })
 
+router.get('/edit-category/:singleCat/delete',(req, res, next)=>{
+
+  const {singleCat} = req.params;
+  res.redirect('/');
+  
+})
+
+router.get('/edit-category/:singleCat/update',(req, res, next)=>{
+
+  const {singleCat} = req.params;
+  res.redirect('/');
+  
+})
+
 module.exports = router;
