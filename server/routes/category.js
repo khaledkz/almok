@@ -49,8 +49,27 @@ router.get('/edit-category/:singleCat/delete',(req, res, next)=>{
 router.get('/edit-category/:singleCat/update',(req, res, next)=>{
 
   const {singleCat} = req.params;
-  res.redirect('/');
-  
+  const cb=(category)=>{
+    res.render('edit-single-category',{
+      category
+    })
+}
+
+dbClinetCate.findSingleCategory(singleCat,cb)
+
+ })
+
+
+ router.post('/edit-category/:singleCat/update',(req, res, next)=>{
+ 
+  const {singleCat} = req.params;
+  const query=req.body;
+  const cb=()=>{
+    res.redirect(`/category/edit-category/${singleCat}`);
+  }
+
+  dbClinetCate.updateCategory(singleCat,query,cb)
+
 })
 
 module.exports = router;
