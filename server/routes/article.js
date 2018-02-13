@@ -8,7 +8,10 @@ router.get('/add-article', function(req, res, next) {
 });
 
 router.get('/edit-article', function(req, res, next) {
-  res.render('edit-article'); 
+  const cb=(articles)=>{
+    res.render('edit-article',{articles}); 
+  }
+  dbClinetArt.findArticle({},cb)
 });
 
 router.post('/add-article', function(req, res, next) {

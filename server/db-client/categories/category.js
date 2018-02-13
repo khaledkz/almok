@@ -5,4 +5,8 @@ const saveCategory = (query,cb)=>{
     category.create(query).then(cb)
 }
 
-module.exports={saveCategory};
+const findCategory=(query,cb)=>{
+    category.find(query).then(cb);
+}
+
+module.exports={saveCategory,findCategory};
