@@ -9,6 +9,7 @@ router.get('/add-article', function(req, res, next) {
 
 router.get('/edit-article', function(req, res, next) {
   const cb=(articles)=>{
+    console.log(articles);
     res.render('edit-article',{articles}); 
   }
   dbClinetArt.findArticle({},cb)

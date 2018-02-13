@@ -1,7 +1,30 @@
-<ul>
-{{#each articles}}
-    <li>{{this.title}}</li>    
-    <li>{{this.order}}</li>    
-    <li>{{this._id}}</li>    
- {{/each}}
-</ul>
+
+<table class="table">
+
+    <thead class="bg-info ">
+
+        <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>FullContent</th>
+                <th>Id</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {{#each articles}}
+
+                <tr>
+                    <th scope="row">{{this.order}}</th>
+                    <td>{{this.title}}</td>
+                    <td>{{this.fullContent}}</td>
+                    <td>{{this._id}}</td>
+                </tr>
+                
+        {{/each}}  
+
+    </tbody>
+
+</table>
