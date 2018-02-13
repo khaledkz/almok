@@ -22,4 +22,17 @@ router.post('/add-category', function (req, res, next) {
   dbClinetCate.saveCategory(req.body, cb);
 });
 
+router.get('/edit-category/:singleCat',(req, res, next)=>{
+
+  const {singleCat} = req.params;
+
+  const cb=(category)=>{
+      res.render('single-category',{
+        category
+      })
+  }
+
+  dbClinetCate.findSingleCategory(singleCat,cb)
+})
+
 module.exports = router;

@@ -8,6 +8,8 @@
                 <th>Title</th>
                 <th>FullContent</th>
                 <th>Id</th>
+                <th>Edit</th>
+                
         </tr>
 
     </thead>
@@ -21,8 +23,10 @@
                     <td>{{this.title}}</td>
                     <td>{{this.fullContent}}</td>
                     <td>{{this._id}}</td>
+                    <td><a href="edit-article/{{_id}}"><button>Update</button></a></td>
+                    
                 </tr>
-                
+            
         {{/each}}  
 
     </tbody>

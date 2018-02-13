@@ -8,4 +8,9 @@ const saveArtice = (query, cb) => {
 const findArticle = (query,cb) => {
   Article.find(query).then(cb);
 }
-module.exports = { saveArtice,findArticle };
+
+const findSingleArticle=(singleArticle,cb)=>{
+  Article.findById(singleArticle).then(cb);
+}
+
+module.exports = { saveArtice,findArticle,findSingleArticle };
